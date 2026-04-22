@@ -1,0 +1,34 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "Testing_File_v1",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "Sheet1": {
+      "queryId": "343ced76-d088-4f70-a81c-e0f8234ac55a",
+      "queryName": "Sheet1",
+      "loadEnabled": false
+    },
+    "Sheet1_DataDestination": {
+      "queryId": "b26cc6e4-a058-4fff-b854-0f24831ad4ae",
+      "queryName": "Sheet1_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://ecolab-my.sharepoint.com/personal/prasannareddy_vustala_ecolab_com/Documents/Desktop/EDO%20workspaces%20(Total%20list).xlsx",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"c2447165-2335-47d6-9b6e-daf4921cfb4e\",\"DatasourceId\":\"9cef2798-c1fd-40fb-a219-9a19ba849b07\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"c2447165-2335-47d6-9b6e-daf4921cfb4e\",\"DatasourceId\":\"97966ec1-0e24-478d-92ce-66ae5255d060\"}"
+    }
+  ]
+}
