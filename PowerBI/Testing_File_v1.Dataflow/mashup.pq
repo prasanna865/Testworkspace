@@ -5,9 +5,10 @@ shared Sheet1 = let
   Source = Excel.Workbook(Web.Contents("https://ecolab-my.sharepoint.com/personal/prasannareddy_vustala_ecolab_com/Documents/Desktop/EDO%20workspaces%20(Total%20list).xlsx"), null, true),
   #"Navigation 1" = Source{[Item = "Sheet1", Kind = "Sheet"]}[Data],
   #"Changed column type" = Table.TransformColumnTypes(#"Navigation 1", {{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}}),
-  #"Promoted headers" = Table.PromoteHeaders(#"Changed column type", [PromoteAllScalars = true])
+  #"Promoted headers" = Table.PromoteHeaders(#"Changed column type", [PromoteAllScalars = true]),
+  #"Removed bottom rows" = Table.RemoveLastN(#"Promoted headers", 5)
 in
-  #"Promoted headers";
+  #"Removed bottom rows";
 shared Sheet1_DataDestination = let
   Pattern = Lakehouse.Contents([CreateNavigationProperties = false, EnableFolding = false, HierarchicalNavigation = null, PreserveOrder = null]),
   Navigation_1 = Pattern{[workspaceId = "d3829ec6-95d6-498c-ac08-74d5f0854256"]}[Data],
